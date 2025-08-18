@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Segoe UI, sans-serif;
+      background: #f3f3f3;
+      color: #222;
+    }
+
+    header {
+      background: #0078d7;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .search-box input {
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    nav {
+      background: #e5e5e5;
+      padding: 10px 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0078d7;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 10px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .btn {
+      display: block;
+      margin: 10px;
+      padding: 8px;
+      text-align: center;
+      background: #0078d7;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #005a9e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Windows Store</h1>
+  </header>
+
+
+  <section class="grid">
+    <div class="card">
+      <img src="https://www.threatdown.com/wp-content/uploads/2024/04/windows_11_is_out_resized.png" alt="Windows 11 Logotype">
+      <h3>Windows 11 Pro</h3>
+      <p>Activa Windows 11 durante 360 dias!</p>
+      <a href="#" class="btn">Comprar</a>
+    </div>
+    <div class="card">
+      <img src="https://pro-it.es/wp-content/uploads/2015/12/windows-10-logo-051014.jpg" alt="Windows 10 Logotype">
+      <h3>Windows 10 Pro</h3>
+      <p>Activa Windows 10 durante 360 dias!</p>
+      <a href="#" class="btn">Comprar</a>
+    </div>
+    <div class="card">
+      <img src="https://i.blogs.es/1e6d84/win11-hero/1366_2000.jpeg" alt="Windows 11">
+      <h3>Windows 11</h3>
+      <p>Descargar el sistema operativo "Windows 11" desde la pagina oficial de Microsoft</p>
+      <a href="https://www.microsoft.com/es-es/software-download/windows11" class="btn">Descargar</a>
+    </div>
+    <div class="card">
+      <img src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2023/08/windows-10-1.jpg" alt="Windows 10">
+      <h3>Windows 10</h3>
+      <p>Descargar el sistema operativo "Windows 10" desde la pagina oficial de Microsoft</p>
+      <a href="https://www.microsoft.com/es-mx/software-download/windows10" class="btn">Descargar</a>
+          </div>
+    <div class="card">
+      <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/322170/capsule_616x353.jpg?t=1703006148" alt="Geometry Dash">
+      <h3>Geometry Dash</h3>
+      <p>¡Salta y vuela para superar el peligro en este juego de plataformas y acción rítmica!</p>
+      <a href="https://store.steampowered.com/app/322170/Geometry_Dash/" class="btn">Comprar en Steam</a>
+    </div>
+        <div class="card">
+      <img src="https://repository-images.githubusercontent.com/557957297/7063b21b-fe71-4b0d-a4f6-3a9c45be7cc1" alt="Geode">
+      <h3>Geode</h3>
+      <p>Disfruta de Mods para Geometry Dash!</p>
+      <a href="https://github.com/geode-sdk/geode/releases/download/v4.7.0/geode-installer-v4.7.0-win.exe" class="btn">Descagar</a>
+    </div>
+  </section>
+</body>
+</html>
