@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina en construcción</title>
+    <style>
+    body {
+    
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    img {
+      max-width: 250px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+    
+#cerrarBoton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px 15px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+<button id="cerrarBoton">Volver</button>
+
+<script>
+  const boton = document.getElementById("cerrarBoton");
+
+  boton.addEventListener("click", () => {
+    // Cambia la URL a donde quieras redirigir
+    window.location.href = "https://yagamerchris.github.io/Windows-Store/";
+  });
+</script>
+
+
+    
+  <img src="https://res-1.cdn.office.net/files/sp-client/odsp-media-ea3deb3d/images/error/web_warning_v3_dark.webp" alt="Windows Store Images">
+  <p>Esta pagina esta en construcción</p>
+</body>
+</html>
