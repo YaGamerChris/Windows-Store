@@ -14,48 +14,59 @@
       transition: background 0.5s;
     }
 
-.store-btn {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none; /* quitamos color para que se vea la imagen */
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
+    .store-btn {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
 
-.store-btn img {
-  display: block;
-  width: 32px;
-  height: 32px;
-}
-
+    .store-btn img {
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
 
     header {
-  background: linear-gradient(135deg, #0078d7, #00a1ff, #00d4ff); /* degradado estilo Windows 11 */
-  color: white;
-  padding: 30px 0;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite; /* animación sutil del degradado */
-}
+      background: linear-gradient(135deg, #0078d7, #00a1ff, #00d4ff);
+      color: white;
+      padding: 30px 0 60px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* buscador */
+    .search-bar {
+      margin: 15px auto 0;
+      display: block;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: none;
+      width: 60%;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
     .grid {
       display: grid;
@@ -128,23 +139,25 @@
   </style>
 </head>
 <body>
-  <header>  <a href="https://yagamerchris.github.io/Store-Center/" class="store-btn">
+   <header>  <a href="https://yagamerchris.github.io/Store-Center/" class="store-btn">
     <img src="data:image/png;base64,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" alt="Store Center" width="32" height="32">
   </a>
-      Windows Store</header>
+      Windows Store
+    <input type="text" id="search" class="search-bar" placeholder="En que app estas pensando hoy">
+  </header>
 
   <section class="grid">
     <div class="card">
       <img src="https://www.threatdown.com/wp-content/uploads/2024/04/windows_11_is_out_resized.png" alt="Windows Store Images">
       <h3>Windows 11 Pro</h3>
-      <p>Disfruta de Windows 11 Pro.</p>
+      <p>No te pierdas de la personalizacion activa Windows 10 Pro.</p>
       <a href="Windows11licencia.htm" class="btn">Obtener</a>
     </div>
 
     <div class="card">
       <img src="https://pro-it.es/wp-content/uploads/2015/12/windows-10-logo-051014.jpg" alt="Windows Store Images">
       <h3>Windows 10 Pro</h3>
-      <p>No te pierdas de la personalizacion activa Windows 10 Pro</p>.</p>
+      <p>No te pierdas de la personalizacion activa Windows 10 Pro.</p>
       <a href="Windows10licencia.htm" class="btn">Obtener</a>
     </div>
 
@@ -231,7 +244,70 @@
       <p>Nuestra app se conecta al servidor oficial de Ya! FM Villahermosa una estacion de radio de Villahermosa Tabasco, descarga nuestra app y escucha musica sin parar.</p>
       <a href="YaFmVillahermosa.htm" class="btn">Obtener</a>
     </div>
+        
+                <div class="card">
+      <img src="https://www.blog.profesionaldj.es/wp-content/uploads/2020/06/New-2.png" alt="Windows Store Images">
+      <h3>VirtualDJ</h3>
+      <p>HACEMOS MUSICA, NO GUERRA.</p>
+      <a href="VirtualDJ.htm" class="btn">Obtener</a>
+    </div>
+    
+                    <div class="card">
+      <img src="NO" alt="Windows Store Images">
+      <h3>No Service</h3>
+      <p>No hay información.</p>
+      <a href="P.htm" class="btn">Obtener</a>
+    </div>
+    
+                        <div class="card">
+      <img src="NO" alt="Windows Store Images">
+      <h3>No Service</h3>
+      <p>No hay información.</p>
+      <a href="P.htm" class="btn">Obtener</a>
+    </div>
+    
+                    <div class="card">
+      <img src="NO" alt="Windows Store Images">
+      <h3>No Service</h3>
+      <p>No hay información.</p>
+      <a href="P.htm" class="btn">Obtener</a>
+    </div>
+    
+                        <div class="card">
+    <img src="NO" alt="Windows Store Images">
+      <h3>No Service</h3>
+      <p>No hay información.</p>
+      <a href="P.htm" class="btn">Obtener</a>
+    </div>
+    
+                    <div class="card">
+    <img src="NO" alt="Windows Store Images">
+      <h3>No Service</h3>
+      <p>No hay información.</p>
+      <a href="P.htm" class="btn">Obtener</a>
+    </div>
+    
+    
   </section>
-  <footer>Este sitio no es oficial de Microsoft.
+
+  <footer>Este sitio no es oficial de Microsoft.</footer>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const cards = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const desc = card.querySelector("p").textContent.toLowerCase();
+        if (title.includes(query) || desc.includes(query)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+ </script>
 </body>
 </html>
