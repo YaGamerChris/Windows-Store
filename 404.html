@@ -6,65 +6,88 @@
   <title>404 - Página no encontrada</title>
   <link rel="icon" href="404.png" type="image/png">
   <style>
+    :root {
+      --bg-color: #1e1e1e;
+      --card-color: #252526;
+      --accent-color: #0078d7;
+      --text-color: #ffffff;
+      --muted-text: #c0c0c0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #f3f3f3, #e0e7ff);
-      color: #222;
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       text-align: center;
+      animation: fadeIn 0.6s ease;
+      padding: 0 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
       font-size: 100px;
       margin: 0;
-      color: #0078d7;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      color: var(--accent-color);
     }
 
     h2 {
-      font-size: 28px;
-      margin: 10px 0 30px;
+      font-size: 20px;
+      font-weight: normal;
+      color: var(--muted-text);
+      max-width: 600px;
+      margin: 15px 0 30px;
     }
 
     .btn {
       display: inline-block;
-      padding: 15px 30px;
-      background: linear-gradient(45deg, #0078d7, #00a1ff);
+      background: var(--accent-color);
       color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 10px;
       font-weight: bold;
-      font-size: 18px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      font-size: 16px;
+      transition: background 0.3s;
     }
 
     .btn:hover {
-      background: linear-gradient(45deg, #005a9e, #0078d7);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      background: #005a9e;
     }
 
-    img {
-      width: 250px;
-      margin-bottom: 20px;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 70px;
+      }
+      h2 {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
- 
+  <h1>404</h1>
+  <h2>Oops… No encontramos la página que buscabas. Revisa si escribiste correctamente la URL.</h2>
+  <a href="https://yagamerchris.github.io/Windows-Store/" class="btn">Volver al inicio</a>
+</body>
+</html>
+
   <h1>404</h1>
   <h2>Oops… No encontramos la página que buscabas, revisa si escribiste correctamente la URL</h2>
   <a href="https://yagamerchris.github.io/Windows-Store/" class="btn">Volver al inicio</a>
 </body>
+
 </html>
