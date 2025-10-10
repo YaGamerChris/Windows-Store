@@ -3,335 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Windows Store</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <style>
-    :root {
-      --accent: #0078d7;
-      --accent-hover: #0094ff;
-      --bg-dark: #0e0e10;
-      --bg-card: #1b1b1f;
-      --text-primary: #ffffff;
-      --text-secondary: #c8c8d0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
+  <title>Pagina en construcción</title>
+    <link rel="icon" href="404.png" type="image/png">
+    <style>
     body {
+    
       margin: 0;
-      font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #0e0e10, #1a1a20);
-      color: var(--text-primary);
-      transition: background 0.5s;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* Botón icono Store */
-    .store-btn {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      display: flex;
+      justify-content: center;
       align-items: center;
-    }
-
-    .store-btn img {
-      width: 32px;
-      height: 32px;
-      filter: drop-shadow(0 0 4px var(--accent));
-    }
-
-    header {
-      background: rgba(25, 25, 30, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background-color: #121212;
       color: white;
-      padding: 40px 0 70px;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      font-size: 28px;
-      font-weight: 600;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
-    /* Barra de búsqueda */
-    .search-bar {
-      margin-top: 20px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text-primary);
-      width: 60%;
-      max-width: 500px;
-      font-size: 16px;
-      outline: none;
-      transition: background 0.3s, border 0.3s;
+    img {
+      max-width: 250px;
+      margin-bottom: 20px;
     }
 
-    .search-bar::placeholder {
-      color: var(--text-secondary);
+    p {
+      font-size: 1.5rem;
     }
+    
+#cerrarBoton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px 15px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: bold;
+}
 
-    .search-bar:focus {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: var(--accent);
-    }
-
-    /* Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 40px 50px;
-      flex: 1;
-    }
-
-    /* Tarjetas */
-    .card {
-      background: var(--bg-card);
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card h3 {
-      margin: 15px;
-      font-size: 20px;
-      color: var(--text-primary);
-    }
-
-    .card p {
-      margin: 0 15px 15px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      flex: 1;
-    }
-
-    .btn {
-      display: block;
-      margin: 15px;
-      padding: 12px 20px;
-      text-align: center;
-      background: var(--accent);
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 120, 215, 0.4);
-    }
-
-    .btn:hover {
-      background: var(--accent-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 148, 255, 0.5);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      background: rgba(20,20,25,0.8);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    @media (max-width: 600px) {
-      .search-bar {
-        width: 85%;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <a href="https://yagamerchris.github.io/Store-Center/" class="store-btn">
-      <img src="data:image/png;base64,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" alt="Store Center">
-    </a>
-     Windows Store
-    <input type="text" id="search" class="search-bar" placeholder="¿En qué app estás pensando hoy?">
-  </header>
-
-  <section class="grid">
-         
-    <div class="card">
-      <img src="https://i.blogs.es/1e6d84/win11-hero/1366_2000.jpeg" alt="Windows Store Images">
-      <h3>Windows 11</h3>
-      <p>Descarga el sistema operativo Windows 11 desde la página oficial de Microsoft.</p>
-      <a href="Windows-11/" class="btn">Obtener</a>
-    </div>
-
-    <div class="card">
-      <img src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2023/08/windows-10-1.jpg" alt="Windows Store Images">
-      <h3>Windows 10</h3>
-      <p>Descarga el sistema operativo Windows 10 desde la página oficial de Microsoft.</p>
-      <a href="Windows-10/" class="btn">Obtener</a>
-    </div>
-
-    <div class="card">
-      <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/322170/capsule_616x353.jpg?t=1703006148" alt="Windows Store Images">
-      <h3>Geometry Dash</h3>
-      <p>¡Salta y vuela para superar el peligro en este juego de plataformas y acción rítmica!</p>
-      <a href="Geometry-Dash/" class="btn">Obtener</a>
-    </div>
-
-    <div class="card">
-      <img src="https://repository-images.githubusercontent.com/557957297/7063b21b-fe71-4b0d-a4f6-3a9c45be7cc1" alt="Windows Store Images">
-      <h3>Geode</h3>
-      <p>Acompaña a Geometry Dash con Geode para mejorar tu juego y disfrutar de mods</p>
-      <a href="Geode/" class="btn">Obtener</a>
-    </div>
-    
-        <div class="card">
-      <img src="https://cdn2.unrealengine.com/ecosystem-w-fn-1920x1080-6d0b8c3e74ff.jpg" alt="Windows Store Images">
-      <h3>Fortnite</h3>
-      <p>Es un juego de tipo batalla real en el que compiten hasta cien jugadores en solitario, dúos, tríos o escuadrones. Los jugadores saltan de un autobús que cruza el mapa en el momento que deseen, y empiezan sin armas.</p>
-      <a href="Fortnite/" class="btn">Obtener</a>
-    </div>
-    
-        <div class="card">
-      <img src="https://images.rbxcdn.com/5348266ea6c5e67b19d6a814cbbb70f6.jpg" alt="Windows Store Images">
-      <h3>Roblox</h3>
-      <p>Roblox es el universo virtual definitivo que te permite crear, compartir experiencias con amigos y ser todo lo que puedas imaginar.</p>
-      <a href="Roblox/" class="btn">Obtener</a>
-    </div>
-    
-            <div class="card">
-      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/1ea445e044a2d5b09cfa8291350b63ebed6e5741/header.jpg?t=1750949552" alt="Windows Store Images">
-      <h3>R.E.P.O.</h3>
-      <p>Aunque el juego es perfectamente jugable en este estado y cuenta con contenido adicional, queremos colaborar con la comunidad para que sea lo mejor posible.</p>
-      <a href="R.E.P.O./" class="btn">Obtener</a>
-    </div>
-        
-            <div class="card">
-      <img src="https://blog.es.playstation.com/tachyon/sites/14/2019/12/unnamed-file-91.jpg?resize=1088%2C600&crop_strategy=smart" alt="Windows Store Images">
-      <h3>Minecraft</h3>
-      <p>Minecraft es un juego formado por bloques, criaturas y comunidades. La elección es tuya: sobrevivir a la noche con Supervivencia o crear una obra de arte con Creativo.</p>
-      <a href="Minecraft/" class="btn">Obtener</a>
-    </div>
-        
-            <div class="card">
-      <img src="https://play-reactor.com/wp-content/uploads/2013/07/gta-v.jpg" alt="Windows Store Images">
-      <h3>Grand Theft Auto V</h3>
-      <p>Grand Theft Auto V (GTA V) es un videojuego de acción y aventura en mundo abierto, desarrollado por Rockstar North y publicado por Rockstar Games. Se lanzó originalmente en 2013.</p>
-      <a href="GTA-V/" class="btn">Obtener</a>
-    </div>
-        
-            <div class="card">
-      <img src="https://play-lh.googleusercontent.com/qoT-GRwKWYjIHuQFCvLOMrcg9lav2YwJjBYiQ9E-6Tu7hpJGkE_AUkKLyIU0pB2Dn6s" alt="Windows Store Images">
-      <h3>AIMP</h3>
-      <p>AIMP es un reproductor de audio gratuito y ligero para Windows conocido por su amplia compatibilidad con formatos de audio, su interfaz personalizable y sus herramientas de gestión de audio.</p>
-      <a href="AIMP/" class="btn">Obtener</a>
-    </div>
-    
-                <div class="card">
-      <img src="https://www.blog.profesionaldj.es/wp-content/uploads/2020/06/New-2.png" alt="Windows Store Images">
-      <h3>VirtualDJ</h3>
-      <p>Virtual DJ es un software profesional de mezcla de audio y video para DJs, creado por la empresa francesa Atomix Productions.</p>
-      <a href="Virtual-DJ/" class="btn">Obtener</a>
-    </div>
-    
-                    <div class="card">
-      <img src="https://store-images.s-microsoft.com/image/apps.19703.9007199266246365.73e47f2a-59d9-4ab9-a337-947a9821644b.42888798-183a-4256-84f6-5c10020990b3?h=720" alt="Windows Store Images">
-      <h3>Netflix</h3>
-      <p> Los usuarios de Netflix pueden acceder al contenido a través de una tarifa mensual y ver lo que deseen, cuando quieran, sin anuncios. </p>
-      <a href="Netflix/" class="btn">Obtener</a>
-    </div>
-    
-                        <div class="card">
-      <img src="https://store-images.s-microsoft.com/image/apps.19923.13571498826857201.b5f74f11-d59e-47fe-9613-1c3e91cff740.2bde81f8-83a8-466e-a609-74994653f956?h=720" alt="Windows Store Images">
-      <h3>Spotify</h3>
-      <p>Spotify permite a los usuarios escuchar música de forma gratuita con funciones básicas, o mejorar su experiencia con una suscripción Premium que elimina anuncios y ofrece otras ventajas.</p>
-      <a href="Spotify/" class="btn">Obtener</a>
-    </div>
-    
-                    <div class="card">
-      <img src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/totalapexgaming.com/wp-content/uploads/2024/05/IndigoPark6.jpg" alt="Windows Store Images">
-      <h3>Indigo Park</h3>
-      <p>¡Explora la maravilla infantil abandonada de Indigo Park! Guiado por Rambley el Mapache.</p>
-      <a href="Indigo-Park/" class="btn">Obtener</a>
-    </div>
-    
-                        <div class="card">
-    <img src="https://store-images.s-microsoft.com/image/apps.14626.13589262686196899.12354b81-d410-4255-b6aa-9f9a68a694ae.dec2ecaf-85b7-4792-b5aa-13c1a3b31c5e?w=464" alt="Windows Store Images">
-      <h3>Among Us</h3>
-      <p>Uno o más jugadores aleatorios de la tripulación son impostores que quieren matar a todos.</p>
-      <a href="Among-Us/" class="btn">Obtener</a>
-    </div>
-    
-                    <div class="card">
-    <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/interactive-demo-369193?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=832&qlt=95&fit=constrain" alt="Windows Store Images">
-      <h3>Microsoft 365</h3>
-      <p>Microsoft 365 es una suscripción basada en la nube que proporciona las últimas versiones de las aplicaciones de productividad de Office (Word, Excel, PowerPoint, Outlook), junto con almacenamiento en la nube (OneDrive) y herramientas de seguridad.</p>
-      <a href="Microsoft-365/" class="btn">Obtener</a>
-    </div>
-    
-                            <div class="card">
-    <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2018/09/samsung-odin.png" alt="Windows Store Images">
-      <h3>Samsung Odin</h3>
-      <p>Odin es una herramienta de software para PC con Windows desarrollada por Samsung, que permite a los usuarios instalar y actualizar el firmware oficial de sus dispositivos Samsung Galaxy.</p>
-      <a href="Odin/" class="btn">Obtener</a>
-    </div>
-    
-                                <div class="card">
-    <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1IxBbj.img?w=768&h=432&m=6" alt="Windows Store Images">
-      <h3>Validrive</h3>
-      <p>ValiDrive es una herramienta gratuita desarrollada por Gibson Research Corporation (GRC) que se utiliza para verificar la capacidad y la integridad real de las unidades de almacenamiento masivo USB.</p>
-      <a href="ValiDrive/" class="btn">Obtener</a>
-    </div>
-    
-                                    <div class="card">
-    <img src="https://image.api.playstation.com/vulcan/img/rnd/202010/1520/7XWcd2Kg44o1IzyY1L7czyyS.png?w=440" alt="Windows Store Images">
-      <h3>Hollow Knight</h3>
-      <p>¡Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes que se encuentra en ruinas.</p>
-      <a href="Hollow-Knight/" class="btn">Obtener</a>
-    </div>
-    
-  </section>
-
-  <footer>Este sitio no es oficial de Microsoft.</footer>
-
-  <script>
-    const searchInput = document.getElementById("search");
-    const cards = document.querySelectorAll(".card");
-
-    searchInput.addEventListener("input", () => {
-      const query = searchInput.value.toLowerCase();
-      cards.forEach(card => {
-        const title = card.querySelector("h3").textContent.toLowerCase();
-        const desc = card.querySelector("p").textContent.toLowerCase();
-        card.style.display = (title.includes(query) || desc.includes(query)) ? "block" : "none";
-      });
-    });
-  </script>
+  <img src="https://res-1.cdn.office.net/files/sp-client/odsp-media-ea3deb3d/images/error/web_warning_v3_dark.webp" alt="Windows Store Images">
+  <p>Estamos construyendo nuestra pagina, debido a un problema de Servicio (GitHub)</p>
 </body>
 </html>
