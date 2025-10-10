@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 11 - Windows Store</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Segoe UI, sans-serif;
+      background: #f3f3f3;
+      color: #222;
+    }
+
+    header {
+      background: #0078d7;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .app-header {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .app-header video {
+      width: 270px; /* relación 16:9 */
+      height: 152px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .app-info h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .app-info p {
+      margin: 5px 0;
+      color: gray;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #0078d7;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #005a9e;
+    }
+
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Windows Store</h1>
+    <a href="https://yagamerchris.github.io/Windows-Store/" style="color:white; text-decoration:none;">⬅ Volver</a>
+  </header>
+
+  <div class="container">
+    <div class="app-header">
+      <!-- Video en secuencia -->
+      <video id="win11Video" autoplay></video>
+
+      <div class="app-info">
+        <h2>Windows 11</h2>
+        <p>Desarrollador: Microsoft</p>
+        <p>Costo: Gratis</p>
+        <a href="https://go.microsoft.com/fwlink/?linkid=2156295" class="btn">Descargar</a>
+      </div>
+    </div>
+
+    <div class="description">
+      <h3>Descripción</h3>
+      <p>Descarga el creador de medios de Windows 11, para instalar Windows 11, Actualizar, Instalar, etc. Todo desde un creador de Medios.</p>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('win11Video');
+    const videos = ['Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4', 'Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win11.mp4', 'Win_3.mp4'];
+    let current = 0;
+
+    function playVideo(index) {
+      video.src = videos[index];
+      video.play().catch(() => {
+        video.muted = true;
+        video.play();
+        document.body.addEventListener('click', () => video.muted = false, { once: true });
+      });
+    }
+
+    video.addEventListener('ended', () => {
+      current++;
+      if (current < videos.length) {
+        playVideo(current);
+      }
+    });
+
+    // Inicia la secuencia
+    playVideo(current);
+  </script>
+
+</body>
+</html>
