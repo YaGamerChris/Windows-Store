@@ -3,51 +3,309 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina en construcción</title>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <style>
+  <title>Windows Store</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    :root {
+      --bg-color: #1e1e1e;
+      --card-color: #252526;
+      --accent-color: #0078d7;
+      --text-color: #ffffff;
+      --muted-text: #c0c0c0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-    
       margin: 0;
-      height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background: var(--card-color);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      background-color: #121212;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    #search {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      background: #333;
+      color: var(--text-color);
+      font-size: 14px;
+      width: 220px;
+      transition: background 0.3s;
+    }
+
+    #search:focus {
+      background: #444;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-color);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card.hide {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0 10px 10px;
+      color: var(--muted-text);
+      font-size: 14px;
+    }
+
+    .card a {
+      display: block;
+      background: var(--accent-color);
       color: white;
-      font-family: 'Segoe UI', sans-serif;
       text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      transition: background 0.3s;
     }
 
-    img {
-      max-width: 250px;
-      margin-bottom: 20px;
+    .card a:hover {
+      background: #005a9e;
     }
 
-    p {
-      font-size: 1.5rem;
-    }
-    
-#cerrarBoton {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  padding: 10px 15px;
-  background-color: #0078d7;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1000;
-  font-weight: bold;
-}
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
 
+      #search {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <img src="https://res-1.cdn.office.net/files/sp-client/odsp-media-ea3deb3d/images/error/web_warning_v3_dark.webp" alt="Windows Store Images">
-  <p>Estamos construyendo nuestra pagina, debido a un problema de Servicio (GitHub)</p>
+
+  <header>
+    <h1>Windows Store</h1>
+    <input type="text" id="search" placeholder="Buscar apps...">
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://i.blogs.es/1e6d84/win11-hero/1366_2000.jpeg" alt="Windows Store Images">
+      <h3>Windows 11</h3>
+      <p>Descarga el sistema operativo Windows 11 desde la página oficial de Microsoft.</p>
+      <a href="Windows-11/" class="btn">Obtener</a>
+    </div>
+
+    <div class="card">
+      <img src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2023/08/windows-10-1.jpg" alt="Windows Store Images">
+      <h3>Windows 10</h3>
+      <p>Descarga el sistema operativo Windows 10 desde la página oficial de Microsoft.</p>
+      <a href="Windows-10/" class="btn">Obtener</a>
+    </div>
+
+    <div class="card">
+      <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/322170/capsule_616x353.jpg?t=1703006148" alt="Windows Store Images">
+      <h3>Geometry Dash</h3>
+      <p>¡Salta y vuela para superar el peligro en este juego de plataformas y acción rítmica!</p>
+      <a href="Geometry-Dash/" class="btn">Obtener</a>
+    </div>
+
+    <div class="card">
+      <img src="https://repository-images.githubusercontent.com/557957297/7063b21b-fe71-4b0d-a4f6-3a9c45be7cc1" alt="Windows Store Images">
+      <h3>Geode</h3>
+      <p>Acompaña a Geometry Dash con Geode para mejorar tu juego y disfrutar de mods</p>
+      <a href="Geode/" class="btn">Obtener</a>
+    </div>
+    
+        <div class="card">
+      <img src="https://cdn2.unrealengine.com/ecosystem-w-fn-1920x1080-6d0b8c3e74ff.jpg" alt="Windows Store Images">
+      <h3>Fortnite</h3>
+      <p>Es un juego de tipo batalla real en el que compiten hasta cien jugadores en solitario, dúos, tríos o escuadrones.</p>
+      <a href="Fortnite/" class="btn">Obtener</a>
+    </div>
+    
+        <div class="card">
+      <img src="https://images.rbxcdn.com/5348266ea6c5e67b19d6a814cbbb70f6.jpg" alt="Windows Store Images">
+      <h3>Roblox</h3>
+      <p>Roblox es el universo virtual definitivo que te permite crear, compartir experiencias con amigos y ser todo lo que puedas imaginar.</p>
+      <a href="Roblox/" class="btn">Obtener</a>
+    </div>
+    
+            <div class="card">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/1ea445e044a2d5b09cfa8291350b63ebed6e5741/header.jpg?t=1750949552" alt="Windows Store Images">
+      <h3>R.E.P.O.</h3>
+      <p>Aunque el juego es perfectamente jugable en este estado y cuenta con contenido adicional, queremos colaborar con la comunidad para que sea lo mejor posible.</p>
+      <a href="R.E.P.O./" class="btn">Obtener</a>
+    </div>
+        
+            <div class="card">
+      <img src="https://blog.es.playstation.com/tachyon/sites/14/2019/12/unnamed-file-91.jpg?resize=1088%2C600&crop_strategy=smart" alt="Windows Store Images">
+      <h3>Minecraft</h3>
+      <p>Minecraft es un juego formado por bloques, criaturas y comunidades. La elección es tuya: sobrevivir a la noche con Supervivencia o crear una obra de arte con Creativo.</p>
+      <a href="Minecraft/" class="btn">Obtener</a>
+    </div>
+        
+            <div class="card">
+      <img src="https://play-reactor.com/wp-content/uploads/2013/07/gta-v.jpg" alt="Windows Store Images">
+      <h3>Grand Theft Auto V</h3>
+      <p>Grand Theft Auto V (GTA V) es un videojuego de acción y aventura en mundo abierto, desarrollado por Rockstar North y publicado por Rockstar Games. Se lanzó originalmente en 2013.</p>
+      <a href="GTA-V/" class="btn">Obtener</a>
+    </div>
+        
+            <div class="card">
+      <img src="https://play-lh.googleusercontent.com/qoT-GRwKWYjIHuQFCvLOMrcg9lav2YwJjBYiQ9E-6Tu7hpJGkE_AUkKLyIU0pB2Dn6s" alt="Windows Store Images">
+      <h3>AIMP</h3>
+      <p>AIMP es un reproductor de audio gratuito y ligero para Windows conocido por su amplia compatibilidad con formatos de audio. (MP3, FLAC, WAV, AIFF, PCM, APE, WV, OGG, OPUS, etc.</p>
+      <a href="AIMP/" class="btn">Obtener</a>
+    </div>
+    
+                <div class="card">
+      <img src="https://www.blog.profesionaldj.es/wp-content/uploads/2020/06/New-2.png" alt="Windows Store Images">
+      <h3>VirtualDJ</h3>
+      <p>Virtual DJ es un software profesional de mezcla de audio y video para DJs, creado por la empresa francesa Atomix Productions.</p>
+      <a href="Virtual-DJ/" class="btn">Obtener</a>
+    </div>
+    
+                    <div class="card">
+      <img src="https://store-images.s-microsoft.com/image/apps.19703.9007199266246365.73e47f2a-59d9-4ab9-a337-947a9821644b.42888798-183a-4256-84f6-5c10020990b3?h=720" alt="Windows Store Images">
+      <h3>Netflix</h3>
+      <p> Los usuarios de Netflix pueden acceder al contenido a través de una tarifa mensual y ver lo que deseen, cuando quieran, sin anuncios. </p>
+      <a href="Netflix/" class="btn">Obtener</a>
+    </div>
+    
+                        <div class="card">
+      <img src="https://store-images.s-microsoft.com/image/apps.19923.13571498826857201.b5f74f11-d59e-47fe-9613-1c3e91cff740.2bde81f8-83a8-466e-a609-74994653f956?h=720" alt="Windows Store Images">
+      <h3>Spotify</h3>
+      <p>Spotify permite a los usuarios escuchar música de forma gratuita con funciones básicas.</p>
+      <a href="Spotify/" class="btn">Obtener</a>
+    </div>
+    
+                    <div class="card">
+      <img src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/totalapexgaming.com/wp-content/uploads/2024/05/IndigoPark6.jpg" alt="Windows Store Images">
+      <h3>Indigo Park</h3>
+      <p>¡Explora la maravilla infantil abandonada de Indigo Park! Guiado por Rambley el Mapache.</p>
+      <a href="Indigo-Park/" class="btn">Obtener</a>
+    </div>
+    
+                        <div class="card">
+    <img src="https://store-images.s-microsoft.com/image/apps.14626.13589262686196899.12354b81-d410-4255-b6aa-9f9a68a694ae.dec2ecaf-85b7-4792-b5aa-13c1a3b31c5e?w=464" alt="Windows Store Images">
+      <h3>Among Us</h3>
+      <p>Uno o más jugadores aleatorios de la tripulación son impostores que quieren matar a todos.</p>
+      <a href="Among-Us/" class="btn">Obtener</a>
+    </div>
+    
+                    <div class="card">
+    <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/interactive-demo-369193?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=832&qlt=95&fit=constrain" alt="Windows Store Images">
+      <h3>Microsoft 365</h3>
+      <p>Microsoft 365 es una suscripción basada en la nube que proporciona Apps de Office, OneDrive, etc.</p>
+      <a href="Microsoft-365/" class="btn">Obtener</a>
+    </div>
+    
+                            <div class="card">
+    <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2018/09/samsung-odin.png" alt="Windows Store Images">
+      <h3>Samsung Odin</h3>
+      <p>Odin es una herramienta de software para PC con Windows desarrollada por Samsung, que permite a los usuarios instalar y actualizar el firmware oficial de sus dispositivos Samsung Galaxy.</p>
+      <a href="Odin/" class="btn">Obtener</a>
+    </div>
+    
+                                <div class="card">
+    <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1IxBbj.img?w=768&h=432&m=6" alt="Windows Store Images">
+      <h3>Validrive</h3>
+      <p>ValiDrive es una herramienta gratuita desarrollada por Gibson Research Corporation (GRC) que se utiliza para verificar la capacidad y la integridad real de las unidades de almacenamiento masivo USB.</p>
+      <a href="ValiDrive/" class="btn">Obtener</a>
+    </div>
+    
+                                    <div class="card">
+    <img src="https://image.api.playstation.com/vulcan/img/rnd/202010/1520/7XWcd2Kg44o1IzyY1L7czyyS.png?w=440" alt="Windows Store Images">
+      <h3>Hollow Knight</h3>
+      <p>¡Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes que se encuentra en ruinas.</p>
+      <a href="Hollow-Knight/" class="btn">Obtener</a>
+    </div>
+
+                                    <div class="card">
+    <img src="https://cdn.fastly.steamstatic.com/store/home/store_home_share.jpg" alt="Windows Store Images">
+      <h3>STEAM</h3>
+      <p>Steam es una plataforma digital para descargar, jugar y gestionar videojuegos y otro software en tu ordenador.</p>
+      <a href="Steam/" class="btn">Obtener</a>
+    </div>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const cards = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase().trim();
+
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const desc = card.querySelector("p").textContent.toLowerCase();
+        const match = title.includes(query) || desc.includes(query);
+
+        if (match) {
+          card.classList.remove("hide");
+        } else {
+          card.classList.add("hide");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
