@@ -138,13 +138,13 @@
 
   <header>
     <h1>Windows Store</h1>
-    <a href="https://yagamerchris.github.io/Windows-Store/">⬅ Volver</a>
+    <a href="https://yagamerchris.github.io/Windows-Store/" style="color:white; text-decoration:none;">⬅ Volver</a>
   </header>
 
   <div class="container">
     <div class="app-header">
       <!-- 🎬 Video -->
-      <video id="win11Video" autoplay muted playsinline></video>
+      <video id="win11Video" autoplay playsinline></video>
 
       <div class="app-info">
         <h2>Windows 11</h2>
@@ -161,23 +161,30 @@
   </div>
 
   <script>
-    // 🎥 Secuencia automática de videos
     const video = document.getElementById('win11Video');
-    const videos = ['Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4', 'Win_3.mp4'];
+    const videos = ['Win11.mp4', 'Win11_3.mp4', 'Win11_2.mp4'];
     let current = 0;
 
     function playVideo(index) {
       video.src = videos[index];
+      video.currentTime = 0;
+      video.muted = false;  // 🔊 Aseguramos que NO esté en silencio
       video.play().catch(() => {
-        video.muted = true;
-        video.play();
+        // Si falla (por políticas del navegador), reproducirá cuando el usuario haga clic
       });
     }
 
+    // Cambiar al siguiente video cuando termine
     video.addEventListener('ended', () => {
       current = (current + 1) % videos.length;
       playVideo(current);
     });
+
+    // Si el navegador bloquea autoplay con sonido, reintentar al hacer clic
+    document.body.addEventListener('click', () => {
+      video.muted = false;
+      video.play();
+    }, { once: true });
 
     playVideo(current);
   </script>
