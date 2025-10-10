@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Página no encontrada</title>
+  <link rel="icon" href="404.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f3f3f3, #e0e7ff);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 100px;
+      margin: 0;
+      color: #0078d7;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    h2 {
+      font-size: 28px;
+      margin: 10px 0 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, #0078d7, #00a1ff);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(45deg, #005a9e, #0078d7);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+ 
+  <h1>404</h1>
+  <h2>Oops… No encontramos la página que buscabas, revisa si escribiste correctamente la URL</h2>
+  <a href="https://yagamerchris.github.io/Windows-Store/" class="btn">Volver al inicio</a>
+</body>
+</html>
